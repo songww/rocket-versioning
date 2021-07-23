@@ -11,7 +11,7 @@ api versioning for rocket web applications
 use rocket::local::blocking::Client;
 use rocket::http::{Header, Status};
 
-use super::Versioning;
+use rocket_versioning::Versioning;
 
 #[get("/versioning", rank = 4)]
 fn versioning(_v: Versioning<1, 0>) -> String {
@@ -56,5 +56,5 @@ fn test_versioning() {
 ```
 
 ## NOTICE
-version in header should be `Major.Minor.Patch`, and patch will be ignored.
+version in header should be `Major.Minor.Patch`, and patch will be ignored.   
 see (unsopported)[https://docs.rs/semver/1.0.3/semver/struct.Version.html#errors] version formats.
